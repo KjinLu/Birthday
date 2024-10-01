@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
 body {
     display: flex;
     align-items: center;
@@ -15,6 +17,8 @@ body {
     transform-style: preserve-3d;
     transform: perspective(2500px);
     transition: 1s;
+    overflow: visible;
+    z-index: 1;
   }
   
   .birthdayCard:hover {
@@ -29,6 +33,14 @@ body {
   .birthdayCard:hover .happy {
     visibility:hidden; 
   }
+
+  .birthdayCard:hover .balloonOne,
+.birthdayCard:hover .balloonTwo,
+.birthdayCard:hover .balloonThree,
+.birthdayCard:hover .balloonFour {
+    transform: translateY(-5990px); /* Bóng sẽ bay lên 50px */
+    transition: transform 5.5s ease; /* Thời gian và hiệu ứng chuyển động */
+}
   
   .cardFront {
     position: relative;
@@ -51,6 +63,8 @@ body {
 
   .balloons {
     position: absolute;
+    overflow: visible;
+    z-index: 2;
   }
   
   .balloonOne, .balloonTwo, .balloonThree, .balloonFour {
@@ -58,7 +72,24 @@ body {
     width: 85px;
     height:95px;
     border-radius:50%;
+    transition: transform 0.5s ease-out;
   }
+
+  .birthdayCard:hover .balloonOne {
+    transform: translateY(-150px); /* Bay lên khi hover */
+}
+
+.birthdayCard:hover .balloonTwo {
+    transform: translateY(-180px); /* Bay lên khi hover */
+}
+
+.birthdayCard:hover .balloonThree {
+    transform: translateY(-160px); /* Bay lên khi hover */
+}
+
+.birthdayCard:hover .balloonFour {
+    transform: translateY(-140px); /* Bay lên khi hover */
+}
 
   .ling1{
     position: absolute;
@@ -149,8 +180,9 @@ body {
   }
   
   p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Dancing Script", cursive;
     color: #333;
+    font-size: 1.2rem;
     margin: 10px 20px;
   }
   
